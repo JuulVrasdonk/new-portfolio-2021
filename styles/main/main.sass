@@ -1,0 +1,139 @@
+@import '../modules/_fonts'
+@import '../modules/_variables'
+@import '../modules/_fundaments'
+@import '../modules/_navbar'
+@import '../modules/_footer'
+
+
+.placeholder-img
+  position: fixed
+  width: 25vw
+  right: 0
+  top: 0
+  z-index: 0
+  transition: .2s
+  transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750)
+
+
+header h1 
+    margin-top: 95px
+    font-size: $heading
+    width: 6em
+    max-width: 90vw
+
+header > div
+    display: flex
+    align-items: center
+    margin: 33px 0 53px 5px
+
+    p
+        font-size: 18px
+        margin-left: 9px
+        padding-top: 3px
+picture 
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 11px
+    img
+        width: 94.1%
+
+article:first-of-type 
+    margin-bottom: 91px
+    a
+        margin-left: 2.9%
+
+#sel-work
+    margin-left: 2.9%
+    position: relative
+    z-index: 3
+
+    h2
+        font-size: $heading
+        margin-bottom: 76px
+
+#sel-work > ul > li
+    margin-bottom: 61px
+
+    h3
+        font-size: $subheading
+    
+    ul 
+        display: flex
+        margin-top: 3px
+        margin-bottom: 10px
+
+        .divider
+            width: 1px
+            height: $extra
+            background-color: white
+            margin-left: clamp(10px, 2.7vw, 19px)
+            margin-right: clamp(10px, 2.7vw, 19px)
+
+        li p
+            font-size: $extra
+            
+#sel-work > ul > li > a > p 
+        width: 24em
+        max-width: 90vw
+        font-size: $text
+
+
+
+
+
+@media (min-width: $tablet) 
+    header h1 
+        max-width: 5em
+        margin-left: 10.7%
+        font-size: 100px
+
+    header div
+        display: flex
+        justify-content: center
+        margin: 0
+        width: 10.7vw
+        position: relative
+        top: 250px
+
+    picture img
+        width: 78.6vw
+
+    article:first-of-type a
+        margin-left: 10.7%
+
+    #sel-work
+        margin-left: 10.7%
+
+    #sel-work > ul > li > a > p 
+        max-width: none
+        width: 60%
+    
+    
+@media (min-width: $desktop)
+    canvas 
+        position: fixed
+        z-index: 2
+        pointer-events: none
+        display: block
+
+    header h1 
+        width: 10em
+        max-width: none
+
+    article:first-of-type 
+        margin-bottom: 333px
+
+
+    #sel-work h2
+        width: 4.5em
+        margin-bottom: 256px
+
+    #sel-work > ul > li
+        margin-bottom: 0px
+
+    #sel-work > ul > li > a > p:last-of-type
+        padding-bottom: 92.5px
+
+    #sel-work > ul > li > a > h3
+        padding-top: 92.5px

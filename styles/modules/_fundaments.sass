@@ -1,0 +1,48 @@
+@import '../modules/_fonts'
+
+*, *::before, *::after
+    margin: 0
+    padding: 0
+
+body
+    background-color: #121212
+
+p, a, span, li, button
+    @include text-style
+    font-family: AndersonGrotesk
+    font-size: $text
+
+h1, h2, h3, h4, strong
+    font-family: AndersonGroteskUltrabold
+    @include text-style
+
+button
+    background-color: transparent
+    border: none
+
+ul
+    list-style-type: none
+
+.gradient-overlay
+    position: fixed
+    bottom: 0
+    width: 100vw
+    height: 23vh 
+    background-image: linear-gradient(180deg,rgba(20,22,26,0),#14161a)
+    z-index: 100
+
+
+@media (min-width: $tablet) 
+    .gradient-overlay
+        height: 15vh
+
+    .tablet-hidden
+        display: none
+
+
+@media (min-width: $desktop) 
+    .desktop-hidden
+        display: none
+
+    .tablet-hidden
+        display: block
