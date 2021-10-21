@@ -332,10 +332,10 @@ footer > div:last-of-type p:last-of-type {
   right: 0;
   top: 0;
   z-index: 0;
-  -webkit-transition: .2s;
-  transition: .2s;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
-          transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header h1 {
