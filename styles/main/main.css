@@ -222,7 +222,7 @@ footer {
   margin: 0 2.9%;
 }
 
-footer h2 {
+footer a h2 {
   font-size: clamp(21.9px, 3.91vw, 72px);
   width: 4.6em;
   margin-bottom: 38px;
@@ -232,7 +232,7 @@ footer ul:first-of-type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 70%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
@@ -493,7 +493,7 @@ article:first-of-type a {
     padding-top: 92.5px;
   }
   #sel-work > ul > li > a > p {
-    width: 50%;
+    width: 40%;
   }
 }
 /*# sourceMappingURL=main.css.map */

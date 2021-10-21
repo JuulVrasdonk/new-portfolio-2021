@@ -1,1 +1,443 @@
-/* No CSS *//*# sourceMappingURL=product-short.css.map */
+@font-face {
+  font-family: AndersonGrotesk;
+  src: url(../../font/AndersonGrotesk.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: AndersonGroteskOblique;
+  src: url(../../font/AndersonGrotesk-Oblique.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: AndersonGroteskLight;
+  src: url(../../font/AndersonGrotesk-Light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: AndersonGroteskLightOblique;
+  src: url(../../font/AndersonGrotesk-LightOblique.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: AndersonGroteskBold;
+  src: url(../../font/AndersonGrotesk-Bold.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: AndersonGroteskBoldOblique;
+  src: url(../../font/AndersonGrotesk-BoldOblique.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: AndersonGroteskUltrabold;
+  src: url(../../font/AndersonGrotesk-Ultrabold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: AndersonGroteskUltraboldOblique;
+  src: url(../../font/AndersonGrotesk-UltraboldOblique.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: AndersonGroteskBlack;
+  src: url(../../font/AndersonGrotesk-Black.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: AndersonGroteskBlackOblique;
+  src: url(../../font/AndersonGrotesk-BlackOblique.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: AndersonGrotesk;
+  src: url(../../font/AndersonGrotesk.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: AndersonGroteskOblique;
+  src: url(../../font/AndersonGrotesk-Oblique.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: AndersonGroteskLight;
+  src: url(../../font/AndersonGrotesk-Light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: AndersonGroteskLightOblique;
+  src: url(../../font/AndersonGrotesk-LightOblique.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: AndersonGroteskBold;
+  src: url(../../font/AndersonGrotesk-Bold.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: AndersonGroteskBoldOblique;
+  src: url(../../font/AndersonGrotesk-BoldOblique.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: AndersonGroteskUltrabold;
+  src: url(../../font/AndersonGrotesk-Ultrabold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: AndersonGroteskUltraboldOblique;
+  src: url(../../font/AndersonGrotesk-UltraboldOblique.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: AndersonGroteskBlack;
+  src: url(../../font/AndersonGrotesk-Black.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: AndersonGroteskBlackOblique;
+  src: url(../../font/AndersonGrotesk-BlackOblique.otf);
+  font-weight: 900;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+}
+
+p, a, span, li, button {
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  font-family: AndersonGrotesk;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+h1, h2, h3, h4, strong {
+  font-family: AndersonGroteskUltrabold;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.gradient-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 23vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
+  background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
+  z-index: 100;
+}
+
+@media (min-width: 576px) {
+  .gradient-overlay {
+    height: 15vh;
+  }
+  .tablet-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-hidden {
+    display: none;
+  }
+  .tablet-hidden {
+    display: block;
+  }
+}
+
+header {
+  margin: 2.9%;
+  margin-bottom: 0;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav a {
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+header nav a:first-of-type {
+  font-family: AndersonGroteskUltraBold;
+  width: 4.5em;
+}
+
+@media (min-width: 576px) {
+  header {
+    margin: 0;
+  }
+  header nav {
+    margin: 1.1%;
+  }
+}
+
+footer > div:first-of-type {
+  margin-top: 219px;
+}
+
+footer {
+  margin: 0 2.9%;
+}
+
+footer a h2 {
+  font-size: clamp(21.9px, 3.91vw, 72px);
+  width: 4.6em;
+  margin-bottom: 38px;
+}
+
+footer ul:first-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer ul:first-of-type li {
+  width: 6.9em;
+}
+
+footer ul:first-of-type li:nth-of-type(2), footer ul:first-of-type li:nth-of-type(4) {
+  text-align: end;
+}
+
+footer ul:first-of-type li:first-of-type, footer ul:first-of-type li:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+footer ul:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 38px;
+  margin-bottom: 199px;
+}
+
+footer ul:last-of-type li {
+  margin-right: 43px;
+}
+
+footer ul:last-of-type svg {
+  width: clamp(20px, 4vw, 30px);
+  height: clamp(20px, 4vw, 30px);
+}
+
+footer > div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2.9%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  z-index: 101;
+}
+
+footer > div:last-of-type p {
+  width: 7em;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+footer > div:last-of-type p:last-of-type {
+  text-align: end;
+}
+
+@media (min-width: 576px) {
+  footer > div:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 234px 10.7% 0 10.7%;
+  }
+  footer > div:first-of-type div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 20%;
+  }
+  footer > div:first-of-type ul:first-of-type {
+    width: 100%;
+    max-width: 23em;
+  }
+  footer > div:first-of-type ul:last-of-type {
+    margin-bottom: 158px;
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer > div:first-of-type {
+    margin-top: 241px;
+  }
+}
+
+header h1 {
+  margin-top: 95px;
+  margin-bottom: 25px;
+  font-size: clamp(56px, 8vw, 100px);
+}
+
+header div > p {
+  margin-bottom: 96px;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 76%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+header ul li {
+  width: 38%;
+}
+
+header ul li:nth-of-type(2), header ul li:nth-of-type(4) {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+header ul li:first-of-type, header ul li:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+main {
+  margin: 0 2.9%;
+}
+
+main .pdf-file {
+  font-family: AndersonGroteskUltrabold;
+}
+
+main div {
+  height: 1px;
+  width: 50px;
+  background-color: white;
+}
+
+main div:first-of-type {
+  margin-bottom: 11px;
+}
+
+main div:last-of-type {
+  margin-top: 11px;
+  margin-bottom: 75px;
+}
+
+main a:last-of-type {
+  height: 65vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 576px) {
+  h1, header div > p, header ul, main div, main a:first-of-type {
+    margin-left: 10.7vw;
+  }
+  header div > p {
+    width: 60%;
+  }
+  main {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  header > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 80vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header > div div {
+    width: 55%;
+  }
+  header > div ul {
+    margin: 0;
+    padding-top: 130px;
+    width: 40%;
+    height: 40%;
+  }
+  header > div ul li {
+    width: 50%;
+  }
+  header > div ul li:first-of-type, header > div ul li:nth-of-type(2) {
+    margin-bottom: 0;
+  }
+  main > div:first-of-type {
+    margin-top: 75px;
+  }
+}
+/*# sourceMappingURL=product-short.css.map */
