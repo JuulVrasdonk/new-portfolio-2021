@@ -5,6 +5,7 @@ if (screen.width < 800) {
     // get empty img tag
     const caseItems = document.querySelectorAll('.myworkitem');
     const image = document.querySelector('.placeholder-img');
+    const body = document.querySelector('.body');
   
     // iterate on all case items with forEach
     caseItems.forEach((element) => {
@@ -31,4 +32,20 @@ if (screen.width < 800) {
         image.style.opacity = 0
       })
     });
-  }
+}
+
+const cursor = document.querySelector('.cursor');
+      document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 16)+"px; left: "+(e.pageX - 16)+"px;")
+        document.querySelector(".fade").classList.remove('invisible');
+  })
+
+
+
+window.onscroll = function() {
+  scrolling();
+};
+function scrolling() {
+      document.querySelector(".fade").classList.add('invisible');
+      // cursor.classList.remove('transition')
+}
