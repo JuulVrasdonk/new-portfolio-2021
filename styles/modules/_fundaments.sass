@@ -27,6 +27,13 @@ button
 ul
     list-style-type: none
 
+
+.cursor
+    position: absolute
+    z-index: 99
+    mix-blend-mode: difference
+    pointer-events: none
+
 .gradient-overlay
     position: fixed
     bottom: 0
@@ -34,43 +41,49 @@ ul
     height: 23vh 
     background-image: linear-gradient(180deg,rgba(20,22,26,0),#14161a)
     z-index: 100
+    pointer-events: none
 
-.cursor 
-    position: absolute
-    z-index: 999
-    mix-blend-mode: difference
+.cursoricon
     pointer-events: none
     animation: cursoranim 4s infinite
     animation-timing-function: linear
+    transform-origin: 50% 50%
 
-.fade
-    transition: 2s
+.cursorborder
+    transform-origin: 47% 47%
+
+.cursor-text
+    position: relative
+    bottom: 32px
+    left: 45px
+    min-width: 12em
+    font-size: $extra
+    color: transparent
+
 
 .invisible
     opacity: 0
-    transition: .2s
+    transition: .5s
 
-.cursorborder
-    transform-origin: 50% 50%
+.clickable
+    animation: cursorborderanim 1s 
 
+.text-fade-in 
+    color: $text-color
+    transition: 2s
 
 @keyframes cursoranim
     from 
-        transform: scale(1)
         transform: rotate(0deg)
     to 
-        transform: scale(.6)
         transform: rotate(360deg)
 
-
-@keyframes hoveranim
-    from 
-        transform: scale(1)
+@keyframes cursorborderanim
+    from
         transform: rotate(0deg)
-    to 
-        transform: scale(2)
+    to
+        
         transform: rotate(360deg)
-
 
 @media (min-width: $tablet) 
     .gradient-overlay
