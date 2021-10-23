@@ -182,6 +182,11 @@ ul {
           transform-origin: 50% 50%;
 }
 
+.fade {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 .cursorborder {
   -webkit-transform-origin: 47% 47%;
           transform-origin: 47% 47%;
