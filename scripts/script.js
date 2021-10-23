@@ -48,8 +48,6 @@ const cursorBorder = document.querySelector('.cursorborder')
 
 document.addEventListener('mousemove', e => {
         cursor.setAttribute("style", "top: "+(e.pageY - 16)+"px; left: "+(e.pageX - 16)+"px;")
-        document.querySelector(".fade").classList.remove('invisible');
-        document.querySelector(".cursor-text").classList.remove('invisible');
   })
   document.addEventListener('mousemove', function() {
     document.querySelector(".fade").classList.remove('invisible');
