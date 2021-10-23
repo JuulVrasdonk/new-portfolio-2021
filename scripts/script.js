@@ -49,19 +49,35 @@ const cursorBorder = document.querySelector('.cursorborder')
 document.addEventListener('mousemove', e => {
         cursor.setAttribute("style", "top: "+(e.pageY - 16)+"px; left: "+(e.pageX - 16)+"px;")
   })
-  document.addEventListener('mousemove', function() {
-    document.querySelector(".fade").classList.remove('invisible');
-    document.querySelector(".cursor-text").classList.remove('invisible');
-  })
   
+// Om dit te fixen voor Safari moet ik zeggen dat als er wordt gescrolld dat hij alleen invisible toe mag voegen.
+// En als er niet wordt gescrrollt kan hij invisible removen met mousemove zoals hierboven
+// Ik moet hier een if else statement voor gebruiken waarbij ik vraag if (scrolling) {add } else {mousemove}
+window.addEventListener('scroll', function() {
+  gsap.to(".fade", {
+    opacity: 0,
+    duration: .2
+  })
+  gsap.to(".cursor-text", {
+    opacity: 0,
+    duration: .2
+  })
+  // document.querySelector(".fade").classList.add('invisible');
+  // document.querySelector(".cursor-text").classList.add('invisible');
+}) 
 
-window.onscroll = function() {
-  scrolling();
-};
-function scrolling() {
-      document.querySelector(".fade").classList.add('invisible');
-      document.querySelector(".cursor-text").classList.add('invisible');
-}
+document.addEventListener('mousemove', function() {
+  gsap.to(".fade", {
+    opacity: 1,
+    duration: .2
+  })
+  gsap.to(".cursor-text", {
+    opacity: 1,
+    duration: .2
+  })
+  // document.querySelector(".fade").classList.remove('invisible');
+  // document.querySelector(".cursor-text").classList.remove('invisible');
+})
 
 
 // ************* Hover cursor text ************* //
