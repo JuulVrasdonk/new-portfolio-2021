@@ -155,7 +155,9 @@ ul {
 }
 
 .cursor {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 99;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -433,10 +435,6 @@ footer > div:last-of-type p:last-of-type {
   right: 0;
   top: 0;
   z-index: 0;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.29, 2);
-          transition-timing-function: cubic-bezier(0.175, 0.885, 0.29, 2);
 }
 
 header h1 {
