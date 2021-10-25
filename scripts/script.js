@@ -45,11 +45,31 @@ const cursor = document.querySelector('.cursor');
 const cursorIcon = document.querySelector('.cursoricon')
 const cursorBorder = document.querySelector('.cursorborder')
 
+gsap.set(cursor, {
+  xPercent: -10,
+  yPercent: -33
+});
 
-document.addEventListener('mousemove', e => {
-        cursor.setAttribute("style", "top: "+(e.pageY - 16)+"px; left: "+(e.pageX - 16)+"px;")
-  })
-  
+// window.addEventListener("mousemove", moveCursor);
+
+// function moveCursor(e) {
+//   gsap.to(cursor, {
+//     x: e.clientX,
+//     y: e.clientY,
+//     ease: Power0.easeNone
+//   });
+// }
+
+
+// document.addEventListener('mousemove', e => {
+//         cursor.setAttribute("style", "top: "+(e.pageY - 16)+"px; left: "+(e.pageX - 16)+"px;")
+//   })
+
+document.body.addEventListener("mousemove", function(e) {
+    cursor.style.left = e.clientX + "px",
+    cursor.style.top = e.clientY + "px";
+});
+
 window.addEventListener('scroll', function() {
   document.querySelector(".fade").classList.add('invisible');
   document.querySelector(".cursor-text").classList.add('invisible');
