@@ -3,6 +3,7 @@ import customCursor  from './modules/custom-cursor.js';
 import clickableCursor  from './modules/clickable-cursor.js';
 import imageReveal  from './modules/image-reveal.js';
 import cursorText  from './modules/cursor-text.js';
+import magneticBtn from './modules/magnetic-btn.js';
 
 
 
@@ -12,6 +13,7 @@ customCursor();
 clickableCursor();
 imageReveal();
 cursorText(); 
+magneticBtn();
 
 
 

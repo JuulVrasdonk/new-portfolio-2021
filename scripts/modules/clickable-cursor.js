@@ -1,14 +1,17 @@
-import {aboutMeLink, cursorBorder,  cursorDot} from "./variables.js";
+import {link, cursorBorder,  cursorDot} from "./variables.js";
 
 export default function clickableCursor () {
-    aboutMeLink.addEventListener("mouseover",() => {
-        cursorBorder.classList.add('clickable');
-        cursorDot.classList.add('clickabledot');
-    });
-    aboutMeLink.addEventListener("mouseleave",() => {
-        cursorBorder.classList.remove('clickable');
-        cursorDot.classList.remove('clickabledot');
-
-    });
+    link.forEach((link) => {
+        link.addEventListener("mouseover",() => {
+            cursorBorder.classList.add('clickable');
+            cursorDot.classList.add('clickabledot');
+        });
+        link.addEventListener("mouseleave",() => {
+            cursorBorder.classList.remove('clickable');
+            cursorDot.classList.remove('clickabledot');
+        });
+    })
 }
 
+
+    
