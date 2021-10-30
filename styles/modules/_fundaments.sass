@@ -26,68 +26,9 @@ button
 ul
     list-style-type: none
 
-
 .cursor
-    position: fixed
-    top: 0 
-    left: 0
-    z-index: 99
-    mix-blend-mode: difference
-    pointer-events: none
+    display: none
 
-.gradient-overlay
-    position: fixed
-    bottom: 0
-    width: 100vw
-    height: 23vh 
-    background-image: linear-gradient(180deg,rgba(20,22,26,0),#14161a)
-    z-index: 100
-    pointer-events: none
-
-.cursoricon
-    pointer-events: none
-    animation: cursoranim 4s infinite
-    animation-timing-function: linear
-    transform-origin: 50% 50%
-
-.fade
-    transition: 1s
-
-.cursorborder
-    transform-origin: 47% 47%
-
-.cursor-text
-    position: relative
-    bottom: 32px
-    left: 45px
-    min-width: 12em
-    font-size: $extra
-    color: transparent
-
-
-.invisible
-    opacity: 0
-    transition: .5s
-
-.clickable
-    animation: cursorborderanim 1s 
-
-.text-fade-in 
-    color: $text-color
-    transition: 2s
-
-@keyframes cursoranim
-    from 
-        transform: rotate(0deg)
-    to 
-        transform: rotate(360deg)
-
-@keyframes cursorborderanim
-    from
-        transform: rotate(0deg)
-    to
-        
-        transform: rotate(360deg)
 
 @media (min-width: $tablet) 
     .gradient-overlay
@@ -103,3 +44,87 @@ ul
 
     .tablet-hidden
         display: block
+
+// Cursor styling
+
+.cursor
+    position: fixed
+    top: 0 
+    left: 0
+    z-index: 99
+    mix-blend-mode: difference
+    pointer-events: none
+    display: block
+
+.gradient-overlay
+    position: fixed
+    bottom: 0
+    width: 100vw
+    height: 23vh 
+    background-image: linear-gradient(180deg,rgba(20,22,26,0),#14161a)
+    z-index: 100
+    pointer-events: none
+
+.cursoricon
+    pointer-events: none
+    display: flex
+    justify-content: center
+    align-items: center
+    animation: cursoranim 4s infinite
+    animation-timing-function: linear
+    transform-origin: 50% 50%
+
+
+.fade
+    transition: .1s
+
+.cursorborder, .cursordot
+    transform-origin: 50% 50%
+    
+
+
+.cursor-text
+    position: relative
+    bottom: 27px
+    left: 45px
+    min-width: 12em
+    font-size: $extra
+    color: transparent
+
+
+.invisible
+    opacity: 0
+    transition: 1s
+
+.clickable
+    animation: cursorborderanim .5s 
+    
+
+.cursordot
+    transform: scale(1)
+    transition: .5s
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 2)
+
+.clickabledot
+    transform: scale(2)
+    transition: .5s
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 2)
+
+.text-fade-in 
+    color: $text-color
+    transition: 2s
+
+@keyframes cursoranim
+    from 
+        transform: rotate(0deg)
+    to 
+        transform: rotate(360deg)
+
+@keyframes cursorborderanim
+    0%
+        transform: rotate(0deg)scale(1)
+    50%
+        transform: rotate(180deg)scale(.5)
+    100%
+        transform: rotate(360deg)scale(1)
+    
