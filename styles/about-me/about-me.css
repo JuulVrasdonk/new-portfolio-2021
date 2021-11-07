@@ -121,7 +121,6 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
-  cursor: none;
 }
 
 body {
@@ -174,164 +173,147 @@ ul {
   .tablet-hidden {
     display: block;
   }
-}
-
-.link {
-  position: relative;
-}
-
-.link span {
-  position: relative;
-  display: inline-block;
-  -webkit-transition: -webkit-transform 0.15s linear;
-  transition: -webkit-transform 0.15s linear;
-  transition: transform 0.15s linear;
-  transition: transform 0.15s linear, -webkit-transform 0.15s linear;
-}
-
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  display: block;
-}
-
-.gradient-overlay {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 23vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
-  background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
-  z-index: 100;
-  pointer-events: none;
-}
-
-.cursoricon {
-  pointer-events: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-animation: cursoranim 4s infinite;
-          animation: cursoranim 4s infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-}
-
-.fade {
-  -webkit-transition: .1s;
-  transition: .1s;
-}
-
-.cursorborder, .cursordot {
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-}
-
-.cursor-text {
-  position: relative;
-  bottom: 27px;
-  left: 45px;
-  min-width: 12em;
-  font-size: clamp(10px, 1.79vw, 16px);
-  color: transparent;
-}
-
-.invisible {
-  opacity: 0;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.clickable {
-  -webkit-animation: cursorborderanim .5s;
-          animation: cursorborderanim .5s;
-}
-
-.cursordot {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
-          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
-}
-
-.clickabledot {
-  -webkit-transform: scale(2);
-          transform: scale(2);
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
-          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
-}
-
-.text-fade-in {
-  color: #ffffff;
-  -webkit-transition: 2s;
-  transition: 2s;
-}
-
-@-webkit-keyframes cursoranim {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+  .link {
+    position: relative;
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  .link span {
+    position: relative;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.15s linear;
+    transition: -webkit-transform 0.15s linear;
+    transition: transform 0.15s linear;
+    transition: transform 0.15s linear, -webkit-transform 0.15s linear;
   }
-}
-
-@keyframes cursoranim {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    display: block;
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  .gradient-overlay {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 23vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
+    background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
+    z-index: 100;
+    pointer-events: none;
   }
-}
-
-@-webkit-keyframes cursorborderanim {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
+  .cursoricon {
+    pointer-events: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-animation: cursoranim 4s infinite;
+            animation: cursoranim 4s infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
   }
-  50% {
-    -webkit-transform: rotate(180deg) scale(0.5);
-            transform: rotate(180deg) scale(0.5);
+  .fade {
+    -webkit-transition: .1s;
+    transition: .1s;
   }
-  100% {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1);
+  .cursorborder, .cursordot {
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
   }
-}
-
-@keyframes cursorborderanim {
-  0% {
-    -webkit-transform: rotate(0deg) scale(1);
-            transform: rotate(0deg) scale(1);
+  .cursor-text {
+    position: relative;
+    bottom: 27px;
+    left: 45px;
+    min-width: 12em;
+    font-size: clamp(10px, 1.79vw, 16px);
+    color: transparent;
   }
-  50% {
-    -webkit-transform: rotate(180deg) scale(0.5);
-            transform: rotate(180deg) scale(0.5);
+  .invisible {
+    opacity: 0;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
-  100% {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1);
+  .clickable {
+    -webkit-animation: cursorborderanim .5s;
+            animation: cursorborderanim .5s;
+  }
+  .cursordot {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .clickabledot {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .text-fade-in {
+    color: #ffffff;
+    -webkit-transition: 2s;
+    transition: 2s;
+  }
+  @-webkit-keyframes cursoranim {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes cursoranim {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes cursorborderanim {
+    0% {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) scale(0.5);
+              transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) scale(1);
+              transform: rotate(360deg) scale(1);
+    }
+  }
+  @keyframes cursorborderanim {
+    0% {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) scale(0.5);
+              transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) scale(1);
+              transform: rotate(360deg) scale(1);
+    }
   }
 }
 
@@ -356,9 +338,12 @@ header nav a span {
   font-size: clamp(14px, 2.5vw, 16px);
 }
 
+header nav a:first-of-type {
+  width: 4.5em;
+}
+
 header nav a:first-of-type span {
   font-family: AndersonGroteskUltraBold;
-  width: 4.5em;
 }
 
 @media (min-width: 576px) {
@@ -491,6 +476,8 @@ header h1 {
   font-size: clamp(56px, 8vw, 100px);
   width: 7em;
   max-width: 90vw;
+  position: relative;
+  z-index: 1;
 }
 
 header h1 span {

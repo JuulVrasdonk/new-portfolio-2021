@@ -1,1 +1,76 @@
-// upcoming awesomeness
+@import '../modules/_fonts'
+@import '../modules/_variables'
+@import '../modules/_fundaments'
+@import '../modules/_navbar'
+@import '../modules/_footer'
+
+
+header h1 
+    margin-top: 95px
+    margin-bottom: 25px
+    font-size: $heading
+
+header > p
+    margin-bottom: 96px
+    
+    span:first-of-type
+        color: #CFCFCF
+
+    span:nth-of-type(2)
+        color: #515151
+
+    span:last-of-type
+        color: #383838
+
+header ul
+        display: flex
+        width: 76%
+        flex-wrap: wrap
+        justify-content: space-between
+        margin-bottom: 44px
+
+        li
+            width: 50%
+        
+        li:nth-of-type(2), li:nth-of-type(4)
+            margin-right: 0
+            margin-left: 0
+
+        li:first-of-type, li:nth-of-type(2)
+            margin-bottom: 32px
+
+        li:nth-of-type(2) p 
+            font-size: clamp(12.5px, 2.5vw, 18px)
+
+
+header > div
+    height: 1px
+    width: 50px
+    background-color: white
+    margin-bottom: 106px
+
+main section > ul
+    overflow-x: hidden
+
+    li ul
+        display: flex
+        margin-bottom: 14px
+    
+    li img 
+            height: 156px
+            margin: 0 7px
+
+main section > ul > li:last-of-type > ul
+    margin-bottom: 73px
+
+main section article > h2
+    margin-left: 2.9%
+    width: 8.5em
+    margin-bottom: 17px
+    font-size: $textheading
+
+main section article > p 
+    margin-left: 2.9%
+
+
+

@@ -3,7 +3,7 @@
 *, *::before, *::after
     margin: 0
     padding: 0
-    cursor: none
+    // cursor: none
 
 body
     background-color: #121212
@@ -45,93 +45,92 @@ ul
     .tablet-hidden
         display: block
 
-// Cursor styling
-.link 
-    position: relative
-
-    span
+    .link 
         position: relative
-        display: inline-block
-        transition: transform 0.15s linear
 
-.cursor
-    position: fixed
-    top: 0 
-    left: 0
-    z-index: 99
-    mix-blend-mode: difference
-    pointer-events: none
-    display: block
+        span
+            position: relative
+            display: inline-block
+            transition: transform 0.15s linear
 
-.gradient-overlay
-    position: fixed
-    bottom: 0
-    width: 100vw
-    height: 23vh 
-    background-image: linear-gradient(180deg,rgba(20,22,26,0),#14161a)
-    z-index: 100
-    pointer-events: none
+    .cursor
+        position: fixed
+        top: 0 
+        left: 0
+        z-index: 99
+        mix-blend-mode: difference
+        pointer-events: none
+        display: block
 
-.cursoricon
-    pointer-events: none
-    display: flex
-    justify-content: center
-    align-items: center
-    animation: cursoranim 4s infinite
-    animation-timing-function: linear
-    transform-origin: 50% 50%
+    .gradient-overlay
+        position: fixed
+        bottom: 0
+        width: 100vw
+        height: 23vh 
+        background-image: linear-gradient(180deg,rgba(20,22,26,0),#14161a)
+        z-index: 100
+        pointer-events: none
 
-
-.fade
-    transition: .1s
-
-.cursorborder, .cursordot
-    transform-origin: 50% 50%
-    
+    .cursoricon
+        pointer-events: none
+        display: flex
+        justify-content: center
+        align-items: center
+        animation: cursoranim 4s infinite
+        animation-timing-function: linear
+        transform-origin: 50% 50%
 
 
-.cursor-text
-    position: relative
-    bottom: 27px
-    left: 45px
-    min-width: 12em
-    font-size: $extra
-    color: transparent
+    .fade
+        transition: .1s
+
+    .cursorborder, .cursordot
+        transform-origin: 50% 50%
+        
 
 
-.invisible
-    opacity: 0
-    transition: 1s
+    .cursor-text
+        position: relative
+        bottom: 27px
+        left: 45px
+        min-width: 12em
+        font-size: $extra
+        color: transparent
 
-.clickable
-    animation: cursorborderanim .5s 
-    
 
-.cursordot
-    transform: scale(1)
-    transition: .5s
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 2)
+    .invisible
+        opacity: 0
+        transition: 1s
 
-.clickabledot
-    transform: scale(2)
-    transition: .5s
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 2)
+    .clickable
+        animation: cursorborderanim .5s 
+        
 
-.text-fade-in 
-    color: $text-color
-    transition: 2s
+    .cursordot
+        transform: scale(1)
+        transition: .5s
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 2)
 
-@keyframes cursoranim
-    from 
-        transform: rotate(0deg)
-    to 
-        transform: rotate(360deg)
+    .clickabledot
+        transform: scale(2)
+        transition: .5s
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 2)
 
-@keyframes cursorborderanim
-    0%
-        transform: rotate(0deg)scale(1)
-    50%
-        transform: rotate(180deg)scale(.5)
-    100%
-        transform: rotate(360deg)scale(1)
+    .text-fade-in 
+        color: $text-color
+        transition: 2s
+
+    @keyframes cursoranim
+        from 
+            transform: rotate(0deg)
+        to 
+            transform: rotate(360deg)
+
+    @keyframes cursorborderanim
+        0%
+            transform: rotate(0deg)scale(1)
+        50%
+            transform: rotate(180deg)scale(.5)
+        100%
+            transform: rotate(360deg)scale(1)
     
