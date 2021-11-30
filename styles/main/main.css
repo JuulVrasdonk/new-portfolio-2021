@@ -121,6 +121,7 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 body {
@@ -137,7 +138,7 @@ p, a, span, li, button {
   font-size: clamp(14px, 2.5vw, 18px);
 }
 
-h1, h2, h3, h4, strong {
+h1, h2, h3, h4, strong, .wrapping-paper {
   font-family: AndersonGroteskUltrabold;
   color: #ffffff;
   mix-blend-mode: difference;
@@ -157,10 +158,40 @@ ul {
   display: none;
 }
 
+.placeholder-img {
+  position: fixed;
+  width: 20vw;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.gradient-overlay {
+  height: 15vh;
+}
+
+.gradient-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 23vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
+  background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.wrapping-paper {
+  display: inline-block;
+  line-height: .8;
+}
+
 @media (min-width: 576px) {
-  .gradient-overlay {
-    height: 15vh;
-  }
   .tablet-hidden {
     display: none;
   }
@@ -192,16 +223,6 @@ ul {
     mix-blend-mode: difference;
     pointer-events: none;
     display: block;
-  }
-  .gradient-overlay {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    height: 23vh;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
-    background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
-    z-index: 100;
-    pointer-events: none;
   }
   .cursoricon {
     pointer-events: none;
@@ -266,6 +287,9 @@ ul {
     color: #ffffff;
     -webkit-transition: 2s;
     transition: 2s;
+  }
+  .wrapping-paper {
+    line-height: 1;
   }
   @-webkit-keyframes cursoranim {
     from {
@@ -438,12 +462,71 @@ footer > div:last-of-type p:last-of-type {
   text-align: end;
 }
 
+.text-me-box {
+  position: relative;
+}
+
+.copy-message-style {
+  position: absolute;
+  right: -45px;
+  font-size: clamp(10px, 1.79vw, 16px);
+  font-family: AndersonGrotesk;
+  width: 100%;
+  -webkit-animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+          animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+  mix-blend-mode: normal;
+}
+
+@-webkit-keyframes message-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes message-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (min-width: 576px) {
+  footer {
+    padding-top: 234px;
+  }
   footer > div:first-of-type {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 234px 10.7% 0 10.7%;
+    margin: 0px 10.7% 0 10.7%;
   }
   footer > div:first-of-type div {
     display: -webkit-box;
@@ -466,24 +549,24 @@ footer > div:last-of-type p:last-of-type {
 }
 
 @media (min-width: 1024px) {
-  footer > div:first-of-type {
-    margin-top: 241px;
+  footer {
+    padding-top: 241px;
   }
 }
 
-.placeholder-img {
-  position: fixed;
-  width: 20vw;
-  right: 0;
-  top: 0;
-  z-index: 0;
+h1 {
+  margin-top: 95px;
+  max-width: 90vw;
+  word-spacing: clamp(0.2em, 1vw, 1em);
+  font-weight: 700;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
 }
 
-header h1 {
-  margin-top: 95px;
+h1 span {
   font-size: clamp(56px, 8vw, 100px);
-  width: 6em;
-  max-width: 90vw;
 }
 
 header > div {
@@ -524,7 +607,7 @@ article:first-of-type {
   margin-bottom: 91px;
 }
 
-article:first-of-type a {
+article:first-of-type > a {
   margin-left: 2.9%;
 }
 
@@ -535,8 +618,12 @@ article:first-of-type a {
 }
 
 #sel-work h2 {
-  font-size: clamp(56px, 8vw, 100px);
   margin-bottom: 76px;
+  word-spacing: clamp(0.2em, 1vw, 1em);
+}
+
+#sel-work h2 span {
+  font-size: clamp(56px, 8vw, 100px);
 }
 
 #sel-work > ul > li {
@@ -544,6 +631,10 @@ article:first-of-type a {
 }
 
 #sel-work > ul > li h3 {
+  word-spacing: clamp(0.2em, 1vw, 1em);
+}
+
+#sel-work > ul > li h3 span {
   font-size: clamp(40px, 7.14vw, 72px);
 }
 
@@ -573,10 +664,59 @@ article:first-of-type a {
   font-size: clamp(14px, 2.5vw, 18px);
 }
 
+.scroll-cta-animated {
+  -webkit-animation: rec-circle 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation: rec-circle 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.scroll-cta-background {
+  fill: white;
+  opacity: .3;
+}
+
+@-webkit-keyframes rec-circle {
+  0% {
+    height: 33%;
+    opacity: 1;
+  }
+  50% {
+    height: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    height: 10px;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+    opacity: 1;
+  }
+}
+
+@keyframes rec-circle {
+  0% {
+    height: 33%;
+    opacity: 1;
+  }
+  50% {
+    height: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    height: 10px;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+    opacity: 1;
+  }
+}
+
 @media (min-width: 576px) {
-  header h1 {
-    max-width: 5em;
+  h1 {
     margin-left: 10.7%;
+    max-width: 80%;
+    line-height: .8em;
+  }
+  h1 span {
     font-size: 100px;
   }
   header div {
@@ -594,7 +734,7 @@ article:first-of-type a {
   picture img {
     width: 78.6vw;
   }
-  article:first-of-type a {
+  article:first-of-type > a {
     margin-left: 10.7%;
   }
   #sel-work {
@@ -607,15 +747,8 @@ article:first-of-type a {
 }
 
 @media (min-width: 1024px) {
-  canvas {
-    position: fixed;
-    z-index: 2;
-    pointer-events: none;
-    display: block;
-  }
-  header h1 {
-    width: 10em;
-    max-width: none;
+  header > h1 {
+    max-width: 70%;
   }
   article:first-of-type {
     margin-bottom: 333px;

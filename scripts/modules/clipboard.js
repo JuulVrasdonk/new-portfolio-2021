@@ -1,27 +1,24 @@
-// import {clipboard} from "./variables.js";
+import {clipboard} from "./variables.js";
 
-// // export default function clickForClipboard() {
-// //     clipboard.addEventListener("click", () => {
-
-// export default function copyToClipboard(str) {
-//             const el = document.createElement('textarea');
-//             el.value = str;
-//             el.setAttribute('readonly', '');
-//             el.style.position = 'absolute';
-//             el.style.left = '-9999px';
-//             document.body.appendChild(el);
-//             const selected =
-//               document.getSelection().rangeCount > 0
-//                 ? document.getSelection().getRangeAt(0)
-//                 : false;
-//             el.select();
-//             document.execCommand('copy');
-//             document.body.removeChild(el);
-//             if (selected) {
-//               document.getSelection().removeAllRanges();
-//               document.getSelection().addRange(selected);
-//             }
-// };
+export default function clickForClipboard() {
+    clipboard.addEventListener("click", () => {
+      let p = document.createElement('p');
+      function addRemoveMessage() {
+        p.classList.add('copy-message-style');
+        clipboard.before(p);
+        setTimeout(function(){ p.remove() }, 3000);
+      }
+      navigator.clipboard.writeText('+31682008808')
+      .then(() => {
+        p.textContent = 'number copied!'; 
+        addRemoveMessage()
+      })
+      .catch(err => {
+        p.textContent ='Failed to copy...';
+        addRemoveMessage()
+      });
+    })
+};
 
     
 

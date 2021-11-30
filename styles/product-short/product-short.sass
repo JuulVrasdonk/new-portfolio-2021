@@ -13,21 +13,21 @@ header div > p
     margin-bottom: 96px
 
 header ul
-        display: flex
-        width: 76%
-        flex-wrap: wrap
-        justify-content: space-between
-        margin-bottom: 44px
+    display: flex
+    width: 76%
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 44px
 
-        li
-            width: 45%
+    li
+        width: 45%
         
-        li:nth-of-type(2), li:nth-of-type(4)
-            margin-right: 0
-            margin-left: 0
+    li:nth-of-type(2), li:nth-of-type(4)
+        margin-right: 0
+        margin-left: 0
 
-        li:first-of-type, li:nth-of-type(2)
-            margin-bottom: 32px
+    li:first-of-type, li:nth-of-type(2)
+        margin-bottom: 32px
     
 main 
     margin: 0 2.9%
@@ -35,7 +35,7 @@ main
     .pdf-file
         font-family: AndersonGroteskUltrabold
 
-    div
+    .divider
         height: 1px
         width: 50px
         background-color: white
@@ -43,19 +43,28 @@ main
     div:first-of-type
         margin-bottom: 11px
 
-    div:last-of-type
+    div:nth-of-type(2)
         margin-top: 11px
         margin-bottom: 75px
 
-    a:last-of-type
-        height: 65vh
-        width: 100%
+    div:last-of-type 
+        position: relative
+        height: 2em
         display: flex
         justify-content: center
         align-items: center
+        padding: 50vh 0 25vh 0 
+        
+        a 
+            padding: 7.5em
 
+            span
+                white-space: nowrap
+
+
+    
 @media (min-width: $tablet)  
-    h1, header div > p, header ul, main div, main a:first-of-type
+    h1, header div > p, header ul, main .divider, main > a:first-of-type
         margin-left: 10.7vw
 
     header div > p

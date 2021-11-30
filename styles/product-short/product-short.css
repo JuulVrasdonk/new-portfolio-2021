@@ -121,6 +121,7 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 body {
@@ -137,7 +138,7 @@ p, a, span, li, button {
   font-size: clamp(14px, 2.5vw, 18px);
 }
 
-h1, h2, h3, h4, strong {
+h1, h2, h3, h4, strong, .wrapping-paper {
   font-family: AndersonGroteskUltrabold;
   color: #ffffff;
   mix-blend-mode: difference;
@@ -157,10 +158,40 @@ ul {
   display: none;
 }
 
+.placeholder-img {
+  position: fixed;
+  width: 20vw;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.gradient-overlay {
+  height: 15vh;
+}
+
+.gradient-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 23vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
+  background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.wrapping-paper {
+  display: inline-block;
+  line-height: .8;
+}
+
 @media (min-width: 576px) {
-  .gradient-overlay {
-    height: 15vh;
-  }
   .tablet-hidden {
     display: none;
   }
@@ -192,16 +223,6 @@ ul {
     mix-blend-mode: difference;
     pointer-events: none;
     display: block;
-  }
-  .gradient-overlay {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    height: 23vh;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
-    background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
-    z-index: 100;
-    pointer-events: none;
   }
   .cursoricon {
     pointer-events: none;
@@ -266,6 +287,9 @@ ul {
     color: #ffffff;
     -webkit-transition: 2s;
     transition: 2s;
+  }
+  .wrapping-paper {
+    line-height: 1;
   }
   @-webkit-keyframes cursoranim {
     from {
@@ -438,12 +462,71 @@ footer > div:last-of-type p:last-of-type {
   text-align: end;
 }
 
+.text-me-box {
+  position: relative;
+}
+
+.copy-message-style {
+  position: absolute;
+  right: -45px;
+  font-size: clamp(10px, 1.79vw, 16px);
+  font-family: AndersonGrotesk;
+  width: 100%;
+  -webkit-animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+          animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+  mix-blend-mode: normal;
+}
+
+@-webkit-keyframes message-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes message-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (min-width: 576px) {
+  footer {
+    padding-top: 234px;
+  }
   footer > div:first-of-type {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 234px 10.7% 0 10.7%;
+    margin: 0px 10.7% 0 10.7%;
   }
   footer > div:first-of-type div {
     display: -webkit-box;
@@ -466,8 +549,8 @@ footer > div:last-of-type p:last-of-type {
 }
 
 @media (min-width: 1024px) {
-  footer > div:first-of-type {
-    margin-top: 241px;
+  footer {
+    padding-top: 241px;
   }
 }
 
@@ -515,7 +598,7 @@ main .pdf-file {
   font-family: AndersonGroteskUltrabold;
 }
 
-main div {
+main .divider {
   height: 1px;
   width: 50px;
   background-color: white;
@@ -525,14 +608,14 @@ main div:first-of-type {
   margin-bottom: 11px;
 }
 
-main div:last-of-type {
+main div:nth-of-type(2) {
   margin-top: 11px;
   margin-bottom: 75px;
 }
 
-main a:last-of-type {
-  height: 65vh;
-  width: 100%;
+main div:last-of-type {
+  position: relative;
+  height: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -542,10 +625,19 @@ main a:last-of-type {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 50vh 0 25vh 0;
+}
+
+main div:last-of-type a {
+  padding: 7.5em;
+}
+
+main div:last-of-type a span {
+  white-space: nowrap;
 }
 
 @media (min-width: 576px) {
-  h1, header div > p, header ul, main div, main a:first-of-type {
+  h1, header div > p, header ul, main .divider, main > a:first-of-type {
     margin-left: 10.7vw;
   }
   header div > p {

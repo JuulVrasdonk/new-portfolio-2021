@@ -4,20 +4,21 @@
 @import '../modules/_navbar'
 @import '../modules/_footer'
 
-.placeholder-img
-  position: fixed
-  width: 20vw
-  right: 0
-  top: 0
-  z-index: 0
-
-
-header h1 
+h1
     margin-top: 95px
-    font-size: $heading
-    width: 6em
     max-width: 90vw
+    word-spacing: clamp(.2em, 1vw, 1em)
+    font-weight: 700
+    overflow: hidden
+    position: relative
+    z-index: 3
+    pointer-events: none
 
+    span
+        font-size: $heading
+        
+
+        
 header > div
     display: flex
     align-items: center
@@ -32,12 +33,13 @@ picture
     flex-direction: column
     align-items: center
     margin-bottom: 11px
+
     img
         width: 94.1%
 
 article:first-of-type 
     margin-bottom: 91px
-    a
+article:first-of-type > a
         margin-left: 2.9%
 
 #sel-work
@@ -47,14 +49,20 @@ article:first-of-type
     
 
     h2
-        font-size: $heading
         margin-bottom: 76px
+        word-spacing: clamp(.2em, 1vw, 1em)
+
+        span
+            font-size: $heading
 
 #sel-work > ul > li
     margin-bottom: 61px
 
     h3
-        font-size: $subheading
+        word-spacing: clamp(.2em, 1vw, 1em)
+
+        span
+            font-size: $subheading
     
     ul 
         display: flex
@@ -77,14 +85,37 @@ article:first-of-type
         font-size: $text
 
 
+.scroll-cta-animated
+    animation: rec-circle 3s infinite cubic-bezier(0.075, 0.820, 0.165, 1.000)
 
+.scroll-cta-background
+    fill: white
+    opacity: .3
+
+@keyframes rec-circle
+    0% 
+        height: 33%
+        opacity: 1
+
+    50%
+        height: 100%
+        transform: translateY(0px)
+        
+
+    100%
+        height: 10px
+        transform: translateY(70px)
+        opacity: 1
 
 
 @media (min-width: $tablet) 
-    header h1 
-        max-width: 5em
+
+    h1 
         margin-left: 10.7%
-        font-size: 100px
+        max-width: 80%
+        line-height: .8em
+        span 
+            font-size: 100px
 
     header div
         display: flex
@@ -97,7 +128,7 @@ article:first-of-type
     picture img
         width: 78.6vw
 
-    article:first-of-type a
+    article:first-of-type > a
         margin-left: 10.7%
 
     #sel-work
@@ -109,15 +140,8 @@ article:first-of-type
     
     
 @media (min-width: $desktop)
-    canvas 
-        position: fixed
-        z-index: 2
-        pointer-events: none
-        display: block
-
-    header h1 
-        width: 10em
-        max-width: none
+    header > h1
+            max-width: 70%
 
     article:first-of-type 
         margin-bottom: 333px
