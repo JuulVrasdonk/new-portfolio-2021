@@ -12,3 +12,13 @@ customCursor();
 clickableCursor();
 magneticBtn();
 imageReveal()
+
+
+
+// ************* Exporting for Barba ************* //
+export default function productShortCalls() {
+    customCursor();
+    clickableCursor();
+    magneticBtn();
+    imageReveal();
+}

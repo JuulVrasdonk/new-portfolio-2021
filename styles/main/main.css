@@ -341,6 +341,28 @@ ul {
   }
 }
 
+.transition-page {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
+}
+
+html.is-animating .transition-page {
+  -webkit-transform: scaleY(100%);
+          transform: scaleY(100%);
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
+}
+
 header {
   margin: 2.9%;
   margin-bottom: 0;
@@ -554,7 +576,7 @@ footer > div:last-of-type p:last-of-type {
   }
 }
 
-h1 {
+.home h1 {
   margin-top: 95px;
   max-width: 90vw;
   word-spacing: clamp(0.2em, 1vw, 1em);
@@ -565,11 +587,11 @@ h1 {
   pointer-events: none;
 }
 
-h1 span {
+.home h1 span {
   font-size: clamp(56px, 8vw, 100px);
 }
 
-header > div {
+.home header > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -579,13 +601,13 @@ header > div {
   margin: 33px 0 53px 5px;
 }
 
-header > div p {
+.home header > div p {
   font-size: 18px;
   margin-left: 9px;
   padding-top: 3px;
 }
 
-picture {
+.home picture {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -599,46 +621,46 @@ picture {
   margin-bottom: 11px;
 }
 
-picture img {
+.home picture img {
   width: 94.1%;
 }
 
-article:first-of-type {
+.home article:first-of-type {
   margin-bottom: 91px;
 }
 
-article:first-of-type > a {
+.home article:first-of-type > a {
   margin-left: 2.9%;
 }
 
-#sel-work {
+.home #sel-work {
   margin-left: 2.9%;
   position: relative;
   z-index: 3;
 }
 
-#sel-work h2 {
+.home #sel-work h2 {
   margin-bottom: 76px;
   word-spacing: clamp(0.2em, 1vw, 1em);
 }
 
-#sel-work h2 span {
+.home #sel-work h2 span {
   font-size: clamp(56px, 8vw, 100px);
 }
 
-#sel-work > ul > li {
+.home #sel-work > ul > li {
   margin-bottom: 61px;
 }
 
-#sel-work > ul > li h3 {
+.home #sel-work > ul > li h3 {
   word-spacing: clamp(0.2em, 1vw, 1em);
 }
 
-#sel-work > ul > li h3 span {
+.home #sel-work > ul > li h3 span {
   font-size: clamp(40px, 7.14vw, 72px);
 }
 
-#sel-work > ul > li ul {
+.home #sel-work > ul > li ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -646,7 +668,7 @@ article:first-of-type > a {
   margin-bottom: 10px;
 }
 
-#sel-work > ul > li ul .divider {
+.home #sel-work > ul > li ul .divider {
   width: 1px;
   height: clamp(10px, 1.79vw, 16px);
   background-color: white;
@@ -654,22 +676,28 @@ article:first-of-type > a {
   margin-right: clamp(10px, 2.7vw, 19px);
 }
 
-#sel-work > ul > li ul li p {
+.home #sel-work > ul > li ul li p {
   font-size: clamp(10px, 1.79vw, 16px);
 }
 
-#sel-work > ul > li > a > p {
+.home #sel-work > ul > li > a > p {
   width: 24em;
   max-width: 90vw;
   font-size: clamp(14px, 2.5vw, 18px);
 }
 
-.scroll-cta-animated {
+.home #sel-work > ul > li > a > button {
+  margin-top: 1em;
+  float: right;
+  margin-right: 2.9%;
+}
+
+.home .scroll-cta-animated {
   -webkit-animation: rec-circle 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
           animation: rec-circle 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.scroll-cta-background {
+.home .scroll-cta-background {
   fill: white;
   opacity: .3;
 }
@@ -711,15 +739,15 @@ article:first-of-type > a {
 }
 
 @media (min-width: 576px) {
-  h1 {
+  .home h1 {
     margin-left: 10.7%;
     max-width: 80%;
     line-height: .8em;
   }
-  h1 span {
+  .home h1 span {
     font-size: 100px;
   }
-  header div {
+  .home header div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -731,43 +759,1574 @@ article:first-of-type > a {
     position: relative;
     top: 250px;
   }
-  picture img {
+  .home picture img {
     width: 78.6vw;
   }
-  article:first-of-type > a {
+  .home article:first-of-type > a {
     margin-left: 10.7%;
   }
-  #sel-work {
+  .home #sel-work {
     margin-left: 10.7%;
   }
-  #sel-work > ul > li > a > p {
+  .home #sel-work > ul > li > a > p {
     max-width: none;
     width: 60%;
   }
 }
 
 @media (min-width: 1024px) {
-  header > h1 {
+  .home header > h1 {
     max-width: 70%;
   }
-  article:first-of-type {
+  .home article:first-of-type {
     margin-bottom: 333px;
   }
-  #sel-work h2 {
+  .home #sel-work h2 {
     width: 4.5em;
     margin-bottom: 256px;
   }
-  #sel-work > ul > li {
+  .home #sel-work > ul > li {
     margin-bottom: 0px;
   }
-  #sel-work > ul > li > a > p:last-of-type {
+  .home #sel-work > ul > li > a > p:last-of-type {
     padding-bottom: 92.5px;
   }
-  #sel-work > ul > li > a > h3 {
+  .home #sel-work > ul > li > a > h3 {
     padding-top: 92.5px;
   }
-  #sel-work > ul > li > a > p {
+  .home #sel-work > ul > li > a > p {
     width: 40%;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGrotesk;
+    src: url(../../font/AndersonGrotesk.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskOblique;
+    src: url(../../font/AndersonGrotesk-Oblique.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskLight;
+    src: url(../../font/AndersonGrotesk-Light.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskLightOblique;
+    src: url(../../font/AndersonGrotesk-LightOblique.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBold;
+    src: url(../../font/AndersonGrotesk-Bold.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBoldOblique;
+    src: url(../../font/AndersonGrotesk-BoldOblique.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskUltrabold;
+    src: url(../../font/AndersonGrotesk-Ultrabold.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskUltraboldOblique;
+    src: url(../../font/AndersonGrotesk-UltraboldOblique.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBlack;
+    src: url(../../font/AndersonGrotesk-Black.otf);
+    font-weight: 900;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBlackOblique;
+    src: url(../../font/AndersonGrotesk-BlackOblique.otf);
+    font-weight: 900;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGrotesk;
+    src: url(../../font/AndersonGrotesk.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskOblique;
+    src: url(../../font/AndersonGrotesk-Oblique.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskLight;
+    src: url(../../font/AndersonGrotesk-Light.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskLightOblique;
+    src: url(../../font/AndersonGrotesk-LightOblique.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBold;
+    src: url(../../font/AndersonGrotesk-Bold.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBoldOblique;
+    src: url(../../font/AndersonGrotesk-BoldOblique.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskUltrabold;
+    src: url(../../font/AndersonGrotesk-Ultrabold.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskUltraboldOblique;
+    src: url(../../font/AndersonGrotesk-UltraboldOblique.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBlack;
+    src: url(../../font/AndersonGrotesk-Black.otf);
+    font-weight: 900;
+  }
+}
+
+@font-face {
+  .about-me {
+    font-family: AndersonGroteskBlackOblique;
+    src: url(../../font/AndersonGrotesk-BlackOblique.otf);
+    font-weight: 900;
+  }
+}
+
+.about-me *, .about-me *::before, .about-me *::after {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+.about-me body {
+  background-color: #121212;
+  height: auto;
+  overflow-x: hidden;
+}
+
+.about-me p, .about-me a, .about-me span, .about-me li, .about-me button {
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  font-family: AndersonGrotesk;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.about-me h1, .about-me h2, .about-me h3, .about-me h4, .about-me strong, .about-me .wrapping-paper {
+  font-family: AndersonGroteskUltrabold;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+}
+
+.about-me button {
+  background-color: transparent;
+  border: none;
+}
+
+.about-me ul {
+  list-style-type: none;
+}
+
+.about-me .cursor {
+  display: none;
+}
+
+.about-me .placeholder-img {
+  position: fixed;
+  width: 20vw;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.about-me .gradient-overlay {
+  height: 15vh;
+}
+
+.about-me .gradient-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 23vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
+  background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.about-me .overflow-hidden {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.about-me .wrapping-paper {
+  display: inline-block;
+  line-height: .8;
+}
+
+@media (min-width: 576px) {
+  .about-me .tablet-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-me .desktop-hidden {
+    display: none;
+  }
+  .about-me .tablet-hidden {
+    display: block;
+  }
+  .about-me .link {
+    position: relative;
+  }
+  .about-me .link span {
+    position: relative;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.15s linear;
+    transition: -webkit-transform 0.15s linear;
+    transition: transform 0.15s linear;
+    transition: transform 0.15s linear, -webkit-transform 0.15s linear;
+  }
+  .about-me .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    display: block;
+  }
+  .about-me .cursoricon {
+    pointer-events: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-animation: cursoranim 4s infinite;
+            animation: cursoranim 4s infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  .about-me .fade {
+    -webkit-transition: .1s;
+    transition: .1s;
+  }
+  .about-me .cursorborder, .about-me .cursordot {
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  .about-me .cursor-text {
+    position: relative;
+    bottom: 27px;
+    left: 45px;
+    min-width: 12em;
+    font-size: clamp(10px, 1.79vw, 16px);
+    color: transparent;
+  }
+  .about-me .invisible {
+    opacity: 0;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .about-me .clickable {
+    -webkit-animation: cursorborderanim .5s;
+            animation: cursorborderanim .5s;
+  }
+  .about-me .cursordot {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .about-me .clickabledot {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .about-me .text-fade-in {
+    color: #ffffff;
+    -webkit-transition: 2s;
+    transition: 2s;
+  }
+  .about-me .wrapping-paper {
+    line-height: 1;
+  }
+  @-webkit-keyframes cursoranim {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes cursoranim {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes cursorborderanim {
+    0% {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) scale(0.5);
+              transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) scale(1);
+              transform: rotate(360deg) scale(1);
+    }
+  }
+  @keyframes cursorborderanim {
+    0% {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) scale(0.5);
+              transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) scale(1);
+              transform: rotate(360deg) scale(1);
+    }
+  }
+}
+
+.about-me .transition-page {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
+}
+
+.about-me html.is-animating .transition-page {
+  -webkit-transform: scaleY(100%);
+          transform: scaleY(100%);
+  -webkit-transition: 1000ms;
+  transition: 1000ms;
+}
+
+.about-me header {
+  margin: 2.9%;
+  margin-bottom: 0;
+}
+
+.about-me header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-me header nav a span {
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.about-me header nav a:first-of-type {
+  width: 4.5em;
+}
+
+.about-me header nav a:first-of-type span {
+  font-family: AndersonGroteskUltraBold;
+}
+
+@media (min-width: 576px) {
+  .about-me header {
+    margin: 0;
+  }
+  .about-me header nav {
+    margin: 1.1%;
+  }
+}
+
+.about-me footer > div:first-of-type {
+  margin-top: 219px;
+}
+
+.about-me footer {
+  margin: 0 2.9%;
+}
+
+.about-me footer a {
+  height: 50%;
+}
+
+.about-me footer a h2 {
+  font-size: clamp(21.9px, 3.91vw, 72px);
+  width: 4.6em;
+  margin-bottom: 38px;
+}
+
+.about-me footer ul:first-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-me footer ul:first-of-type li {
+  width: 6.9em;
+}
+
+.about-me footer ul:first-of-type li:nth-of-type(2), .about-me footer ul:first-of-type li:nth-of-type(4) {
+  text-align: end;
+}
+
+.about-me footer ul:first-of-type li:first-of-type, .about-me footer ul:first-of-type li:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+.about-me footer ul:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 38px;
+  margin-bottom: 199px;
+}
+
+.about-me footer ul:last-of-type li {
+  margin-right: 43px;
+}
+
+.about-me footer ul:last-of-type svg {
+  width: clamp(20px, 4vw, 30px);
+  height: clamp(20px, 4vw, 30px);
+}
+
+.about-me footer > div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2.9%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  z-index: 101;
+}
+
+.about-me footer > div:last-of-type p {
+  width: 7em;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.about-me footer > div:last-of-type p:last-of-type {
+  text-align: end;
+}
+
+.about-me .text-me-box {
+  position: relative;
+}
+
+.about-me .copy-message-style {
+  position: absolute;
+  right: -45px;
+  font-size: clamp(10px, 1.79vw, 16px);
+  font-family: AndersonGrotesk;
+  width: 100%;
+  -webkit-animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+          animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+  mix-blend-mode: normal;
+}
+
+@keyframes message-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .about-me footer {
+    padding-top: 234px;
+  }
+  .about-me footer > div:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0px 10.7% 0 10.7%;
+  }
+  .about-me footer > div:first-of-type div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 20%;
+  }
+  .about-me footer > div:first-of-type ul:first-of-type {
+    width: 100%;
+    max-width: 23em;
+  }
+  .about-me footer > div:first-of-type ul:last-of-type {
+    margin-bottom: 158px;
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-me footer {
+    padding-top: 241px;
+  }
+}
+
+.about-me header h1 {
+  margin-top: 41px;
+  font-size: clamp(56px, 8vw, 100px);
+  width: 7em;
+  max-width: 90vw;
+  position: relative;
+  z-index: 1;
+}
+
+.about-me header h1 span {
+  font-size: clamp(56px, 8vw, 100px);
+  font-family: AndersonGroteskUltrabold;
+  margin-right: 80%;
+}
+
+.about-me picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  bottom: 100px;
+}
+
+.about-me picture img {
+  width: 100%;
+}
+
+.about-me main {
+  margin: 2.9%;
+  position: relative;
+  bottom: 50px;
+}
+
+.about-me main p:first-of-type {
+  margin-bottom: 50px;
+}
+
+.about-me main strong {
+  font-size: clamp(32px, 7.14vw, 72px);
+  width: 10em;
+}
+
+.about-me main h2 {
+  margin-top: 68px;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-family: AndersonGrotesk;
+  text-decoration: underline;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 576px) {
+  .about-me header h1 {
+    margin-left: 10.7%;
+    width: 10em;
+  }
+  .about-me picture {
+    margin: 0 10.7%;
+    bottom: 0px;
+  }
+  .about-me main {
+    bottom: 0px;
+    margin: 0 10.7%;
+  }
+  .about-me main p:first-of-type {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-me main {
+    width: 60%;
+  }
+  .about-me main p {
+    width: 60%;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGrotesk;
+    src: url(../../font/AndersonGrotesk.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskOblique;
+    src: url(../../font/AndersonGrotesk-Oblique.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskLight;
+    src: url(../../font/AndersonGrotesk-Light.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskLightOblique;
+    src: url(../../font/AndersonGrotesk-LightOblique.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBold;
+    src: url(../../font/AndersonGrotesk-Bold.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBoldOblique;
+    src: url(../../font/AndersonGrotesk-BoldOblique.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskUltrabold;
+    src: url(../../font/AndersonGrotesk-Ultrabold.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskUltraboldOblique;
+    src: url(../../font/AndersonGrotesk-UltraboldOblique.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBlack;
+    src: url(../../font/AndersonGrotesk-Black.otf);
+    font-weight: 900;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBlackOblique;
+    src: url(../../font/AndersonGrotesk-BlackOblique.otf);
+    font-weight: 900;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGrotesk;
+    src: url(../../font/AndersonGrotesk.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskOblique;
+    src: url(../../font/AndersonGrotesk-Oblique.otf);
+    font-weight: normal;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskLight;
+    src: url(../../font/AndersonGrotesk-Light.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskLightOblique;
+    src: url(../../font/AndersonGrotesk-LightOblique.otf);
+    font-weight: 300;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBold;
+    src: url(../../font/AndersonGrotesk-Bold.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBoldOblique;
+    src: url(../../font/AndersonGrotesk-BoldOblique.otf);
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskUltrabold;
+    src: url(../../font/AndersonGrotesk-Ultrabold.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskUltraboldOblique;
+    src: url(../../font/AndersonGrotesk-UltraboldOblique.otf);
+    font-weight: 700;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBlack;
+    src: url(../../font/AndersonGrotesk-Black.otf);
+    font-weight: 900;
+  }
+}
+
+@font-face {
+  .euroute {
+    font-family: AndersonGroteskBlackOblique;
+    src: url(../../font/AndersonGrotesk-BlackOblique.otf);
+    font-weight: 900;
+  }
+}
+
+.euroute *, .euroute *::before, .euroute *::after {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+.euroute body {
+  background-color: #121212;
+  height: auto;
+  overflow-x: hidden;
+}
+
+.euroute p, .euroute a, .euroute span, .euroute li, .euroute button {
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  font-family: AndersonGrotesk;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.euroute h1, .euroute h2, .euroute h3, .euroute h4, .euroute strong, .euroute .wrapping-paper {
+  font-family: AndersonGroteskUltrabold;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+}
+
+.euroute button {
+  background-color: transparent;
+  border: none;
+}
+
+.euroute ul {
+  list-style-type: none;
+}
+
+.euroute .cursor {
+  display: none;
+}
+
+.euroute .placeholder-img {
+  position: fixed;
+  width: 20vw;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.euroute .gradient-overlay {
+  height: 15vh;
+}
+
+.euroute .gradient-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 23vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 22, 26, 0)), to(#14161a));
+  background-image: linear-gradient(180deg, rgba(20, 22, 26, 0), #14161a);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.euroute .overflow-hidden {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.euroute .wrapping-paper {
+  display: inline-block;
+  line-height: .8;
+}
+
+@media (min-width: 576px) {
+  .euroute .tablet-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .euroute .desktop-hidden {
+    display: none;
+  }
+  .euroute .tablet-hidden {
+    display: block;
+  }
+  .euroute .link {
+    position: relative;
+  }
+  .euroute .link span {
+    position: relative;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.15s linear;
+    transition: -webkit-transform 0.15s linear;
+    transition: transform 0.15s linear;
+    transition: transform 0.15s linear, -webkit-transform 0.15s linear;
+  }
+  .euroute .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    display: block;
+  }
+  .euroute .cursoricon {
+    pointer-events: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-animation: cursoranim 4s infinite;
+            animation: cursoranim 4s infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  .euroute .fade {
+    -webkit-transition: .1s;
+    transition: .1s;
+  }
+  .euroute .cursorborder, .euroute .cursordot {
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  .euroute .cursor-text {
+    position: relative;
+    bottom: 27px;
+    left: 45px;
+    min-width: 12em;
+    font-size: clamp(10px, 1.79vw, 16px);
+    color: transparent;
+  }
+  .euroute .invisible {
+    opacity: 0;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .euroute .clickable {
+    -webkit-animation: cursorborderanim .5s;
+            animation: cursorborderanim .5s;
+  }
+  .euroute .cursordot {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .euroute .clickabledot {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2);
+  }
+  .euroute .text-fade-in {
+    color: #ffffff;
+    -webkit-transition: 2s;
+    transition: 2s;
+  }
+  .euroute .wrapping-paper {
+    line-height: 1;
+  }
+  @-webkit-keyframes cursoranim {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes cursoranim {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes cursorborderanim {
+    0% {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) scale(0.5);
+              transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) scale(1);
+              transform: rotate(360deg) scale(1);
+    }
+  }
+  @keyframes cursorborderanim {
+    0% {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) scale(0.5);
+              transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) scale(1);
+              transform: rotate(360deg) scale(1);
+    }
+  }
+}
+
+.euroute header {
+  margin: 2.9%;
+  margin-bottom: 0;
+}
+
+.euroute header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.euroute header nav a span {
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.euroute header nav a:first-of-type {
+  width: 4.5em;
+}
+
+.euroute header nav a:first-of-type span {
+  font-family: AndersonGroteskUltraBold;
+}
+
+@media (min-width: 576px) {
+  .euroute header {
+    margin: 0;
+  }
+  .euroute header nav {
+    margin: 1.1%;
+  }
+}
+
+.euroute footer > div:first-of-type {
+  margin-top: 219px;
+}
+
+.euroute footer {
+  margin: 0 2.9%;
+}
+
+.euroute footer a {
+  height: 50%;
+}
+
+.euroute footer a h2 {
+  font-size: clamp(21.9px, 3.91vw, 72px);
+  width: 4.6em;
+  margin-bottom: 38px;
+}
+
+.euroute footer ul:first-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.euroute footer ul:first-of-type li {
+  width: 6.9em;
+}
+
+.euroute footer ul:first-of-type li:nth-of-type(2), .euroute footer ul:first-of-type li:nth-of-type(4) {
+  text-align: end;
+}
+
+.euroute footer ul:first-of-type li:first-of-type, .euroute footer ul:first-of-type li:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+.euroute footer ul:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 38px;
+  margin-bottom: 199px;
+}
+
+.euroute footer ul:last-of-type li {
+  margin-right: 43px;
+}
+
+.euroute footer ul:last-of-type svg {
+  width: clamp(20px, 4vw, 30px);
+  height: clamp(20px, 4vw, 30px);
+}
+
+.euroute footer > div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2.9%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  z-index: 101;
+}
+
+.euroute footer > div:last-of-type p {
+  width: 7em;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.euroute footer > div:last-of-type p:last-of-type {
+  text-align: end;
+}
+
+.euroute .text-me-box {
+  position: relative;
+}
+
+.euroute .copy-message-style {
+  position: absolute;
+  right: -45px;
+  font-size: clamp(10px, 1.79vw, 16px);
+  font-family: AndersonGrotesk;
+  width: 100%;
+  -webkit-animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+          animation: message-fade 3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+  mix-blend-mode: normal;
+}
+
+@keyframes message-fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .euroute footer {
+    padding-top: 234px;
+  }
+  .euroute footer > div:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0px 10.7% 0 10.7%;
+  }
+  .euroute footer > div:first-of-type div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 20%;
+  }
+  .euroute footer > div:first-of-type ul:first-of-type {
+    width: 100%;
+    max-width: 23em;
+  }
+  .euroute footer > div:first-of-type ul:last-of-type {
+    margin-bottom: 158px;
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .euroute footer {
+    padding-top: 241px;
+  }
+}
+
+.euroute header div h1 {
+  margin-top: 95px;
+  margin-bottom: 25px;
+  font-size: clamp(56px, 8vw, 100px);
+}
+
+.euroute header > div div p {
+  margin-bottom: 96px;
+  width: 95%;
+}
+
+.euroute header > div div p span:first-of-type {
+  color: #CFCFCF;
+}
+
+.euroute header > div div p span:nth-of-type(2) {
+  color: #515151;
+}
+
+.euroute header > div div p span:last-of-type {
+  color: #383838;
+}
+
+.euroute header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 76%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+.euroute header ul li {
+  width: 50%;
+}
+
+.euroute header ul li:nth-of-type(2), .euroute header ul li:nth-of-type(4) {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.euroute header ul li:first-of-type, .euroute header ul li:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+.euroute header ul li:nth-of-type(2) p {
+  font-size: clamp(12.5px, 2.5vw, 18px);
+}
+
+.euroute header > .divider {
+  height: 1px;
+  width: 50px;
+  background-color: white;
+  margin-bottom: 106px;
+}
+
+.euroute main section > ul {
+  overflow: hidden;
+}
+
+.euroute main section > ul li ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.euroute main section > ul li ul li img {
+  height: 156px;
+  margin: 0 7px;
+}
+
+.euroute main section > ul > li:last-of-type > ul {
+  margin-bottom: 73px;
+}
+
+.euroute main section article > h2 {
+  margin-left: 2.9%;
+  width: 8.5em;
+  margin-bottom: 17px;
+  font-size: clamp(28px, 5.71vw, 72px);
+}
+
+.euroute main section article > p {
+  margin-left: 2.9%;
+  width: 80%;
+}
+
+.euroute main section:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 158px;
+}
+
+.euroute main section:nth-of-type(2) .responsive-anim {
+  width: 80%;
+  margin-bottom: 66px;
+}
+
+.euroute main .divider {
+  height: 1px;
+  width: 50px;
+  margin-top: 156px;
+  background-color: white;
+  margin-left: 2.9%;
+}
+
+.euroute main div:first-of-type {
+  margin-bottom: 11px;
+}
+
+.euroute main div:nth-of-type(2) {
+  margin-top: 11px;
+  margin-bottom: 75px;
+}
+
+.euroute main .pdf-file {
+  margin-left: 2.9%;
+}
+
+.euroute main div:last-of-type {
+  position: relative;
+  height: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50vh 0 25vh 0;
+}
+
+.euroute main div:last-of-type a {
+  padding: 7.5em;
+}
+
+.euroute main div:last-of-type a span {
+  white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+  .euroute h1, .euroute header > div div p, .euroute header ul, .euroute header main .divider, .euroute main > a:first-of-type, .euroute main > .divider {
+    margin-left: 10.7vw;
+  }
+  .euroute header > div div p {
+    width: 60%;
+  }
+  .euroute header > div:last-of-type {
+    opacity: 0;
+  }
+  .euroute main {
+    margin: 0;
+  }
+  .euroute main section > ul li img {
+    height: 274px;
+    margin: 0 7px;
+  }
+  .euroute main section article > p {
+    margin-left: 2.9%;
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .euroute header {
+    height: 100vh;
+  }
+  .euroute header > div:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 80vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .euroute header > div:first-of-type div {
+    width: 55%;
+  }
+  .euroute header > div:first-of-type ul {
+    margin: 0;
+    padding-top: 130px;
+    width: 40%;
+    height: 40%;
+  }
+  .euroute header > div:first-of-type ul li {
+    width: 50%;
+  }
+  .euroute header > div:first-of-type ul li:first-of-type, .euroute header > div:first-of-type ul li:nth-of-type(2) {
+    margin-bottom: 0;
+  }
+  .euroute main section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    width: 100vw;
+  }
+  .euroute main section article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 45%;
+    padding-left: 10.7vw;
+  }
+  .euroute main section article h2 {
+    margin-left: 0;
+    font-size: clamp(28px, 5.71vw, 48px);
+  }
+  .euroute main section article p {
+    margin-left: 0;
+    width: 70%;
+  }
+  .euroute main section ul {
+    position: relative;
+    z-index: -1;
+    right: 50px;
+    width: 55%;
+  }
+  .euroute main section:nth-of-type(2) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 290px;
+  }
+  .euroute main section:nth-of-type(2) article {
+    width: 60%;
+  }
+  .euroute main section:nth-of-type(2) article p {
+    width: 60%;
+  }
+  .euroute main section:nth-of-type(2) .responsive-anim {
+    width: 30%;
+    margin-right: 10.7vw;
+    margin-bottom: 0;
+  }
+  .euroute main section > ul li ul li img {
+    height: 224px;
+    margin: 0 7px;
   }
 }
 /*# sourceMappingURL=main.css.map */

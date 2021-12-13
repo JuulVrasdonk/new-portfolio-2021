@@ -5,7 +5,8 @@ function textAnimation(element) {
         y: -120,
         stagger: .2,
         ease: "power4.out",
-        opacity: 1,
+        opacity: 0,
+        autoAlpha: 0,
         scale: .9
     })
 }

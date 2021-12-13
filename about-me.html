@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juul Vrasdonk - Get to know me</title>
-    <link rel="stylesheet" href="styles/about-me/about-me.css">
+    <link rel="stylesheet" href="styles/main/main.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
+    <script defer type="module" src="scripts/about-me.js"></script>
 </head>
-<body>
+<body class="about-me" id="swup">
+    <div class="transition-page"></div>
     <div class="gradient-overlay"></div> 
     <div class="cursor">
         <svg  class="cursoricon fade" width="34.2" height="37.2" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +24,7 @@
     </div>
     <header>
         <nav>
-            <a href="index.html" class="link magnetic"><span>Juul Vrasdonk</span></a>
+            <a href="/index.html" class="link magnetic"><span>Juul Vrasdonk</span></a>
             <a href="#footer" class="link magnetic"><span>Contact</span></a>
         </nav>
         <h1><span>Hi,</span> I'm Juul Vrasdonk</h1>
@@ -45,7 +50,7 @@
     </main>
     <footer id="footer">
         <div>
-            <a class="link" href="index.html">
+            <a class="link" href="/index.html">
                 <h2 >Juul Vrasdonk</h2>
             </a>
             <div>
@@ -53,7 +58,7 @@
                     <li class="link"><a href="mailto:juulvrasdonk@gmail.com">Mail me</a></li>
                     <li class="link text-me-box"><button class="text-me">Text me</button></li>
                     <li class="link"><a href="#sel-work">Selected work</a></li>
-                    <li class="link"><a href="about-me.html">Get to know me</a></li>
+                    <li class="link"><a href="/about-me.html">Get to know me</a></li>
                 </ul>
                 <ul>
                     <li>
@@ -85,8 +90,5 @@
             <p>Amsterdam, the Netherlands</p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <script type="module" src="scripts/about-me.js"></script>
 </body>
 </html>

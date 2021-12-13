@@ -1,0 +1,14 @@
+.transition-page 
+    position: fixed
+    z-index: 1000
+    top: 0
+    width: 100vw
+    height: 100vh
+    background-color: white
+    transform: scaleY(0)
+    transform-origin: top
+    transition: 1000ms
+
+html.is-animating .transition-page
+    transform: scaleY(100%)
+    transition: 1000ms

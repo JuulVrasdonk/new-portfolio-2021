@@ -11,4 +11,13 @@ import imageReveal  from './modules/image-reveal.js';
 customCursor();
 clickableCursor();
 magneticBtn();
-imageReveal()
+imageReveal();
+
+
+// ************* Exporting for Barba ************* //
+export default function productLongCalls() {
+    customCursor();
+    clickableCursor();
+    magneticBtn();
+    imageReveal();
+}

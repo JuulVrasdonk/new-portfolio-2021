@@ -1,8 +1,7 @@
 import {textAnimation} from "../modules/text-animation.js";
 
-
-
 export default function mainChoreo() {
+  
     // H1
     function headingAnimation() {
         return textAnimation(document.querySelectorAll(".heading > .overflow-hidden > .wrapping-paper"))
@@ -27,22 +26,55 @@ export default function mainChoreo() {
         }
     }
 
-    function pinnedHeading() {
+    // function pinnedHeading() {
+    //     if(window.matchMedia("(min-width: 576px)").matches) {
+    //         let tl = gsap.timeline();
+    //         tl.to("h1", {
+    //             y: 110,
+    //             scrollTrigger: {
+    //                 trigger: "h1", 
+    //                 start: "top top+=15%",
+    //                 end: "top top",
+    //                 scrub: .7
+    //             }
+    //         })
+    //         return tl;
+    //     }
+        
+    // }
+
+    function navAppearance() {
+        let tl = gsap.timeline()
+        tl.from("nav, header > div", {
+            duration: 1,
+            ease: "power4.out",
+            opacity: 0,
+            stagger: .2
+        })
+        return tl
+    }
+
+    function scrollAnimation() {
         if(window.matchMedia("(min-width: 576px)").matches) {
             let tl = gsap.timeline();
-            tl.to("h1", {
-                y: 110,
+            tl.to("header > div",{
+                y: -110,
+                opacity: 0,
                 scrollTrigger: {
                     trigger: "h1", 
                     start: "top top+=15%",
                     end: "top top",
-                    scrub: .7
+                    scrub: .2
                 }
             })
             return tl;
         }
-        
     }
+
+    // ************ SEL WORK ************//
+
+
+
     gsap.from(".sel-work-heading .wrapping-paper", {
         scrollTrigger: {
             trigger: ".sel-work-heading .wrapping-paper",
@@ -52,8 +84,10 @@ export default function mainChoreo() {
         y: -120,
         stagger: .2,
         ease: "power4.out",
-        opacity: 1,
-        scale: .9
+        autoAlpha: 0,
+        opacity: 0,
+        scale: .9,
+        marker: true
     })
 
     let ubicompTl = gsap.timeline({
@@ -67,14 +101,15 @@ export default function mainChoreo() {
         y: -120,
         stagger: .2,
         ease: "power4.out",
-        opacity: 1,
+        autoAlpha: 0,
+        opacity: 0,
         scale: .9,
     })
     .from(".ubicomp ul, .ubicomp p", {
         duration: 2,
         ease: "power4.out",
         opacity: 0
-    }, "<")
+    }, "-=0.5")
     
     let eurouteTl = gsap.timeline({
         scrollTrigger: {
@@ -88,14 +123,15 @@ export default function mainChoreo() {
         y: -120,
         stagger: .2,
         ease: "power4.out",
-        opacity: 1,
+        autoAlpha: 0,
+        opacity: 0,
         scale: .9,
     })
     .from(".euroute  ul, .euroute p", {
         duration: 2,
         ease: "power4.out",
         opacity: 0
-    }, "<")
+    }, "-=0.5")
 
 
     let fedTl = gsap.timeline({
@@ -110,14 +146,15 @@ export default function mainChoreo() {
         y: -120,
         stagger: .2,
         ease: "power4.out",
-        opacity: 1,
+        autoAlpha: 0,
+        opacity: 0,
         scale: .9,
     })
     .from(".FED  ul, .FED p", {
         duration: 2,
         ease: "power4.out",
         opacity: 0
-    }, "<")
+    }, "-=0.5")
 
     let buurTl = gsap.timeline({
         scrollTrigger: {
@@ -131,14 +168,15 @@ export default function mainChoreo() {
         y: -120,
         stagger: .2,
         ease: "power4.out",
-        opacity: 1,
+        autoAlpha: 0,
+        opacity: 0,
         scale: .9,
     })
     .from(".Buur  ul, .Buur p", {
         duration: 2,
         ease: "power4.out",
         opacity: 0
-    }, "<")
+    }, "-=0.5")
 
 
 
@@ -146,5 +184,7 @@ export default function mainChoreo() {
     let master = gsap.timeline()
         .add(headingAnimation())
         .add(imageAnimation(), "+=1")
-        .add(pinnedHeading())
+        .add(scrollAnimation())
+        .add(navAppearance(), "-=0.5")
+        // .add(pinnedHeading())
 }

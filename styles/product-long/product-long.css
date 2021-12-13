@@ -191,6 +191,15 @@ ul {
   line-height: .8;
 }
 
+div.pageTransition {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100vw;
+  height: 0;
+  background-color: white;
+}
+
 @media (min-width: 576px) {
   .tablet-hidden {
     display: none;

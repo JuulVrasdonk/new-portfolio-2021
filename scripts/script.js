@@ -8,6 +8,7 @@ import cursorText  from './modules/cursor-text.js';
 import magneticBtn from './modules/magnetic-btn.js';
 import copyToClipboard from './modules/clipboard.js';
 import mainChoreo from './choreos/main-choreo.js';
+import swupTransition from './modules/swup.js'
 
 
 
@@ -20,10 +21,18 @@ magneticBtn();
 textWrapper();
 copyToClipboard();
 mainChoreo();
+swupTransition();
 
-
-
-
+// ************* Exporting for Barba ************* //
+export default function homeCalls() {
+    customCursor();
+    clickableCursor();
+    imageReveal();
+    cursorText(); 
+    magneticBtn();
+    textWrapper();
+    copyToClipboard();
+}
 
 
 

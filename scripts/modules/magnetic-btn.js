@@ -7,7 +7,6 @@ export default function magneticBtn () {
         const position = link.getBoundingClientRect();
         const x = e.clientX - position.left - position.width / 2;
         const y = e.clientY - position.top - position.height / 2;
-        console.log(e.pageY);
         link.children[0].style.transform = "translate(" + x * 0.3 + "px, " + y * 0.5 + "px)";
       });
     });
